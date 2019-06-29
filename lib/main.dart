@@ -90,7 +90,12 @@ class MyHomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: <Widget>[
                             FloatingActionButton(
-                              onPressed: () {},
+                              onPressed: () {
+                              Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DetailsScreen()));
+                              },
                               backgroundColor: greenColor,
                               child: Icon(Icons.shopping_cart),
                             ),
