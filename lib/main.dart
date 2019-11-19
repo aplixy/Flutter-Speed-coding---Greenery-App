@@ -26,86 +26,97 @@ class MyHomePage extends StatelessWidget {
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(
-              flex: 4,
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  borderRadius:
-                      BorderRadius.only(bottomLeft: Radius.circular(108.0)),
-                  color: Colors.white,
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(32.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(height: 8.0),
-                      Icon(Icons.arrow_back),
-                      SizedBox(height: 8.0),
-                      Container(
-                        width: 300.0,
-                        child: Text(
-                          'Fiddle Leaf Fig Topiary',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 32.0),
+                  Expanded(
+            flex: 4,
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius:
+                    BorderRadius.only(bottomLeft: Radius.circular(108.0)),
+                color: Colors.white,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(32.0),
+                child: Stack(
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        SizedBox(height: 8.0),
+                        Icon(Icons.arrow_back),
+                        SizedBox(height: 8.0),
+                        Container(
+                          width: 300.0,
+                          child: Text(
+                            'Fiddle Leaf Fig Topiary',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 32.0),
+                          ),
                         ),
-                      ),
-                      SizedBox(height: 12.0),
-                      Text(
-                        '10" Nursery Pot',
-                        style: TextStyle(color: Colors.black45),
-                      ),
-                      SizedBox(height: 12.0),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 10.0),
-                            child: Text('\$',
+                        SizedBox(height: 12.0),
+                        Text(
+                          '10" Nursery Pot',
+                          style: TextStyle(color: Colors.black45),
+                        ),
+                        SizedBox(height: 12.0),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 10.0),
+                              child: Text('\$',
+                                  style: TextStyle(
+                                      color: greenColor,
+                                      fontSize: 24.0,
+                                      fontWeight: FontWeight.bold)),
+                            ),
+                            SizedBox(width: 4.0),
+                            Text('85',
                                 style: TextStyle(
                                     color: greenColor,
-                                    fontSize: 24.0,
-                                    fontWeight: FontWeight.bold)),
-                          ),
-                          SizedBox(width: 4.0),
-                          Text('85',
-                              style: TextStyle(
-                                  color: greenColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 52.0)),
-                        ],
-                      ),
-                      Spacer(),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          FloatingActionButton(
-                            onPressed: () {
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 52.0)),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: <Widget>[
+                        Spacer(
+                          flex: 5,
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            FloatingActionButton(
+                              onPressed: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => DetailsScreen()));
-                            },
-                            backgroundColor: greenColor,
-                            child: Icon(Icons.shopping_cart),
-                          ),
-                          Container(
-                            width: 200.0,
-                            child: Image.network(
-                              productImage,
-                              fit: BoxFit.cover,
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => DetailsScreen()));
+                              },
+                              backgroundColor: greenColor,
+                              child: Icon(Icons.shopping_cart),
                             ),
-                          )
-                        ],
-                      ),
-                      SizedBox(height: 16.0)
-                    ],
-                  ),
+                            Container(
+                              height: MediaQuery.of(context).size.height / 2,
+                              width: MediaQuery.of(context).size.width / 2.5,
+                              child: Image.network(
+                                productImage,
+                                fit: BoxFit.cover,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 16.0)
+                  ],
                 ),
               ),
             ),
+          ),
             Expanded(
               flex: 1,
               child: Padding(
